@@ -13,10 +13,12 @@ find_package(OpenCV REQUIRED)
 set(SOURCES_DIR "src/")
 # Headers
 set(${PROJECT_NAME}_headers
+    ${SOURCES_DIR}/GMS_filtering.h
     )
 
 # Sources
 set(${PROJECT_NAME}_sources
+    ${SOURCES_DIR}/GMS_filtering.cxx
     ${SOURCES_DIR}/main.cxx
     )
 
@@ -36,5 +38,6 @@ target_include_directories(${PROJECT_NAME} SYSTEM PRIVATE
 target_link_libraries(${PROJECT_NAME} PRIVATE
     ${OpenCV_LIBS}
     Eigen3::Eigen
+    stdc++fs
     )
 
